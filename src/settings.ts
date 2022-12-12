@@ -42,7 +42,7 @@ export class GeneralSettings {
 
     public minRepetitionsToDisplay: number = 1;
     public maxNumberOfWords: number = 200;
-    public minFontSize: number = 20 / GeneralSettings.FontSizePercentageFactor;
+    public minFontSize: number = 25 / GeneralSettings.FontSizePercentageFactor;
     public maxFontSize: number = 100 / GeneralSettings.FontSizePercentageFactor;
     public isBrokenText: boolean = true;
     public isPunctuationsCharacters: boolean = false;
@@ -66,9 +66,9 @@ export class RotateTextSettings {
     public static MaxNumberOfWords: number = 2500;
 
     public show: boolean = true;
-    public minAngle: number = -60;
-    public maxAngle: number = 90;
-    public maxNumberOfOrientations: number = 2;
+    public minAngle: number = -45;
+    public maxAngle: number = 45;
+    public maxNumberOfOrientations: number = 3;
 }
 
 export class PerformanceSettings {

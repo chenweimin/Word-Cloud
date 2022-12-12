@@ -331,7 +331,7 @@ export class WordCloud implements IVisual {
     private static TheFirstByteMask: number = 32;
     private static SxMask: number = 127;
 
-    private static LineWidthFactor: number = 2;
+    private static LineWidthFactor: number = 1;
 
     private static AdditionalDataPointSize: number = 1;
     private static AdditionalTextWidth: number = 2;
@@ -730,7 +730,7 @@ export class WordCloud implements IVisual {
         let weight: number,
             fontSize: number,
             minFontSize: number = settings.general.minFontSize * GeneralSettings.FontSizePercentageFactor,
-            maxFontSize: number = settings.general.maxFontSize * GeneralSettings.FontSizePercentageFactor;
+            maxFontSize: number = settings.general.maxFontSize * GeneralSettings.FontSizePercentageFactor * 1.5;
 
         weight = WordCloud.getWeightByScaleType(value, scaleType);
 
@@ -789,9 +789,9 @@ export class WordCloud implements IVisual {
         }
 
         const angle: number = ((settings.rotateText.maxAngle - settings.rotateText.minAngle)
-            / settings.rotateText.maxNumberOfOrientations)
+            / (settings.rotateText.maxNumberOfOrientations-1))
             * Math.floor(WordCloud.GET_FROM_CYCLED_SEQUENCE(WordCloud.PreparedRandoms, index) * settings.rotateText.maxNumberOfOrientations);
-
+        
         return settings.rotateText.minAngle + angle;
     }
 
